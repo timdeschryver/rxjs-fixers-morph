@@ -1,0 +1,22 @@
+{
+  "name": "rxjs-fixers-morph",
+  "version": "0.0.0",
+  "description": "Fixers for RxJS deprecations",
+  "scripts": {
+    "start": "ts-node --project ./src/tsconfig.json ./src/index.ts",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Tim Deschryver",
+  "license": "MIT",
+  "dependencies": {
+    "ts-morph": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "rxjs": "^6.5.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.3"
+  }
+}
