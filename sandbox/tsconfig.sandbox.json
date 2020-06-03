@@ -2,5 +2,5 @@
   "compilerOptions": {
     "baseUrl": "./"
   },
-  "include": ["./actual-output/*.ts"]
+  "include": ["./**/transformed.ts"]
 }

@@ -8,18 +8,18 @@ test.each([
   'tap-signature',
 ])(
   '%s',
-  async (fileName) => {
-    const input = `./sandbox/input/${fileName}.ts`;
-    const actualOutput = `./sandbox/actual-output/${fileName}.ts`;
-    const expectedOutput = `./sandbox/expected-output/${fileName}.ts`;
+  async (fixer) => {
+    const input = `./sandbox/${fixer}/input.ts`;
+    const output = `./sandbox/${fixer}/output.ts`;
+    const transformed = `./sandbox/${fixer}/transformed.ts`;
 
-    fs.copyFileSync(input, actualOutput);
+    fs.copyFileSync(input, transformed);
 
     await npm(['run start']);
 
-    const contentAfterFix = fs.readFileSync(actualOutput, 'utf8');
-    const expectedContent = fs.readFileSync(expectedOutput, 'utf8');
-    expect(contentAfterFix).toBe(expectedContent);
+    const transformedContent = fs.readFileSync(transformed, 'utf8');
+    const expectedContent = fs.readFileSync(output, 'utf8');
+    expect(transformedContent).toBe(expectedContent);
   },
   30_000
 );
