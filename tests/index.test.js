@@ -15,7 +15,7 @@ test.each([
 
     fs.copyFileSync(input, transformed);
 
-    await npm(['run start']);
+    await npm(['run sandbox', '"./sandbox/tsconfig.sandbox.json"']);
 
     const transformedContent = fs.readFileSync(transformed, 'utf8');
     const expectedContent = fs.readFileSync(output, 'utf8');

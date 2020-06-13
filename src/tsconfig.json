@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "lib": ["ES2020", "DOM"],
-    "target": "ES2020"
-  }
-}

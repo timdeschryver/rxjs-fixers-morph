@@ -2,20 +2,26 @@
   "name": "rxjs-fixers-morph",
   "version": "0.0.0",
   "description": "Fixers for RxJS deprecations",
+  "bin": "cli.js",
   "scripts": {
-    "start": "ts-node --project ./src/tsconfig.json ./src/index.ts",
-    "test": "jest"
+    "sandbox": "ts-node ./src/index.ts",
+    "test": "jest",
+    "prebuild": "rimraf ./dist",
+    "build": "tsc",
+    "postbuild": "cpy ./package.json ./dist && cpy ./cli.js ./dist && cpy ./README.md ./dist"
   },
   "keywords": [],
   "author": "Tim Deschryver",
   "license": "MIT",
   "dependencies": {
-    "ts-morph": "^7.1.0"
+    "ts-morph": "^7.1.0",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
+    "cpy-cli": "^3.1.1",
     "jest": "^26.0.1",
-    "rxjs": "^6.5.5",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }

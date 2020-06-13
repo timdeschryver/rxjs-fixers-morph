@@ -30,7 +30,7 @@ export function tagSignature(sourceFile: SourceFile) {
           continue;
         }
 
-        let updatedSignatures = [];
+        let updatedSignatures: string[] = [];
         const updateSignature = (node: Node<ts.Node>, propertyName: string) => {
           if (!node) {
             return;

@@ -4,8 +4,10 @@ import { tagSignature } from './tap-signature';
 import { subscribeSignature } from './subscribe-signature';
 import { resultSelector } from './result-selectors';
 
+const tsConfigPath = process.argv.slice(2)[0] || './tsconfig.json';
+
 const project = new Project({
-  tsConfigFilePath: './sandbox/tsconfig.sandbox.json',
+  tsConfigFilePath: tsConfigPath,
 });
 
 const sourceFiles = project.getSourceFiles();

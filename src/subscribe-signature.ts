@@ -24,7 +24,7 @@ export function subscribeSignature(sourceFile: SourceFile) {
         return;
       }
 
-      let updatedSignatures = [];
+      let updatedSignatures: string[] = [];
       const updateSignature = (node: Node<ts.Node>, propertyName: string) => {
         if (!node) {
           return;
