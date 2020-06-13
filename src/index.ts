@@ -18,6 +18,7 @@ for (const sourceFile of sourceFiles) {
     subscribeSignature,
     resultSelector,
   ];
+
   const updated = fixers.reduce(
     (res, fixer) => fixer(sourceFile) || res,
     false
