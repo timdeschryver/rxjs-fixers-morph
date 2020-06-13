@@ -1,12 +1,7 @@
 var fs = require('fs');
 var cp = require('child_process');
 
-test.each([
-  'operator-with-rename',
-  'result-selectors',
-  'subscribe-signature',
-  'tap-signature',
-])(
+test.each(fs.readdirSync('./sandbox').filter((p) => !p.endsWith('.json')))(
   '%s',
   async (fixer) => {
     const input = `./sandbox/${fixer}/input.ts`;
